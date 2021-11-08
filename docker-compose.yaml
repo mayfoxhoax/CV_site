@@ -1,15 +1,20 @@
-version: '3.5'
+version: '3'
 services:
-  nginx:
-    image: mayfoxhoax/ngx_websrv
-    restart: always
-    ports:
-      - 80:80
-      - 443:443
-    volumes:
-      - ./data/cpustat:/var/www/html/cpu
-  php:
-    image: mayfoxhoax/apache_php
-    restart: always
-    ports:
-      - 8080:80
+   nginx:
+     image: nginx
+     restart: always
+     ports:
+       - 80:80
+       - 443:443
+     volumes:
+       - ./data/nginx:/etc/nginx/
+       - ./data/letsencrypt:/etc/letsencrypt/
+       - ./data/www:/var/www/
+       - ./data/cpustat:/var/www/html/cpu
+   php:
+     image: php:apache
+     restart: always
+     ports:
+       - 8080:80
+     volumes:
+       - ./apache/index:/var/www/html/
