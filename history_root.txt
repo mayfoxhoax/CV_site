@@ -1,0 +1,176 @@
+    1  apt update
+    2  apt install wget curl
+    3  wget https://releases.hashicorp.com/terraform/1.1.7/terraform_1.1.7_windows_amd64.zip
+    4  ll
+    5  pwd
+    6  ip a
+    7  mv terraform_1.1.7_windows_amd64.zip /home/ubuntu
+    8  ll
+    9  ll /home/ubuntu/
+   10  exit
+   11  cd /etc/wireguard/
+   12  ll
+   13  cat privatekey 
+   14  sysctl -p
+   15  systemctl enable wg-quick@wg0.service
+   16  systemctl start wg-quick@wg0.service
+   17  systemctl status wg-quick@wg0.service
+   18  cat lisitsa_publickey 
+   19  vi wg0.conf 
+   20  cat wg0.conf 
+   21  systemctl restart wg-quick@wg0
+   22  systemctl restart wg-quick@wg0.service 
+   23  cat lisitsa_privatekey 
+   24  cat publickey 
+   25  exit
+   26  apt upgrade
+   27  cd /etc/wireguard/
+   28  ll
+   29  wg genkey | tee /etc/wireguard/privatekey | wg pubkey | tee /etc/wireguard/publickey
+   30  chmod 600 privatekey 
+   31  vim /etc/wireguard/wg0.conf
+   32  cat privatekey 
+   33  vim /etc/wireguard/wg0.conf
+   34  echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
+   35  sysctl -p
+   36  systemctl enable wg-quick@wg0.service
+   37  systemctl start wg-quick@wg0.service
+   38  systemctl status wg-quick@wg0.service
+   39  wg genkey | tee /etc/wireguard/lisitsa_privatekey | wg pubkey | tee /etc/wireguard/lisitsa_publickey
+   40  vi wg0.conf 
+   41  fg
+   42  cat lisitsa_privatekey 
+   43  vi wg0.conf 
+   44  systemctl restart wg-quick@wg0
+   45  systemctl statys wg-quick@wg0
+   46  systemctl status wg-quick@wg0
+   47  cat lisitsa_privatekey 
+   48  cat publickey 
+   49  curl ifconfig.me
+   50  ll
+   51  cat lisitsa_publickey
+   52  vi wg0.conf 
+   53  cat privatekey
+   54  vi wg0.conf 
+   55  systemctl restart wg-quick@wg0.service 
+   56  systemctl status wg-quick@wg0.service 
+   57  cat lisitsa_privatekey 
+   58  cat publickey 
+   59  vi wg0.conf 
+   60  systemctl restart wg-quick@wg0.service 
+   61  cat publickey 
+   62  cat lisitsa_privatekey 
+   63  vi wg0.conf 
+   64  cat privatekey 
+   65  fg
+   66  systemctl status wg-quick@wg0.service 
+   67  fg
+   68  cat lisitsa_publickey 
+   69  fg
+   70  systemctl restart wg-quick@wg0.service 
+   71  vi wg0.conf 
+   72  cat lisitsa_pr
+   73  cat lisitsa_privatekey 
+   74  vi wg0.conf 
+   75  cat publickey 
+   76  systemctl restart wg-quick@wg0.service 
+   77  cd /etc/wireguard/
+   78  ll
+   79  vi wg0.conf 
+   80  systemctl restart wg-quick@wg0.service 
+   81  vi wg0.conf 
+   82  systemctl restart wg-quick@wg0.service 
+   83  vi wg0.conf 
+   84  apt update
+   85  apt upgrade
+   86  apt install -y docker
+   87  docker
+   88  apt install -y docker.io
+   89  docker pull mayfoxhoax/ngx_websrv:latest
+   90  docker pull mayfoxhoax/apache_php:latest
+   91  apt install -y docker-compose 
+   92  cd /home/ubuntu/mayfox.ddns.net/
+   93  ll
+   94  docker-compose up
+   95  docker-compose up -d
+   96  docker ps
+   97  docker exec -it 6cfe8814b119 bash
+   98  ll
+   99  ll data/
+  100  ll data/cpustat/
+  101  ll
+  102  dg -h
+  103  df -h
+  104  cd ~
+  105  ll
+  106  apt install openjdk-8-jre
+  107  java -version
+  108  curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee   /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+  109  echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]   https://pkg.jenkins.io/debian-stable binary/ | sudo tee   /etc/apt/sources.list.d/jenkins.list > /dev/null
+  110  apt-get install jenkins
+  111  curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+  112  echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \ /etc/apt/sources.list.d/jenkins.list > /dev/null
+  113  curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee   /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+  114  echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]   https://pkg.jenkins.io/debian-stable binary/ | sudo tee   /etc/apt/sources.list.d/jenkins.list > /dev/null
+  115  sudo apt-get update
+  116  sudo apt-get install jenkins
+  117  systemctl edit jenkins
+  118  systemctl start jenkins
+  119  less /var/lib/jenkins/secrets/initialAdminPassword
+  120  cd /tmp/
+  121  ll
+  122  mkdir SITE_TEMP
+  123  cd SITE_TEMP/
+  124  ll
+  125  git clone https://github.com/mayfoxhoax/CV_site.git
+  126  ll
+  127  cd CV_site/
+  128  ll
+  129  cd ../..
+  130  ll
+  131  rm -rf SITE_TEMP/
+  132  ll
+  133  cd /home/ubuntu/mayfox.ddns.net/
+  134  ll
+  135  cd /home/ubuntu/mayfox.ddns.net/
+  136  ll
+  137  cat /etc/sudoers
+  138  vi /etc/sudoers
+  139  cd ..
+  140  ll
+  141  cd mayfox.ddns.net/
+  142  ll
+  143  apt install -y git
+  144  git
+  145  exit
+  146  pwd
+  147  cd /home/ubuntu/
+  148  ll
+  149  rm key4git*
+  150  ll
+  151  ls .ssh/
+  152  ssh-keygen
+  153  ll
+  154  ll .ssh/config 
+  155  ll .ssh/config
+  156  vi .ssh/config
+  157  ssh -T git@github.com
+  158  cat git
+  159  cat git.pub 
+  160  ssh -T git@github.com
+  161  ssh -T -p 443 git@ssh.github.com
+  162  cp git* .ssh/
+  163  ssh -T -p 443 git@ssh.github.com
+  164  ssh -T git@github.com
+  165  ll
+  166  rm git*
+  167  rm -rf .ssh/*
+  168  ll
+  169  rmdir .ssh/
+  170  ll
+  171  exit
+  172  ll .ssh/
+  173  mv .ssh/conig .ssh/config 
+  174  ll .ssh/
+  175  exit
+  176  history > /home/ubuntu/CV_site/history_root.txt 
