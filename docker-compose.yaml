@@ -7,14 +7,8 @@ services:
        - 80:80
        - 443:443
      volumes:
-       - ./data/nginx:/etc/nginx/
-       - ./data/letsencrypt:/etc/letsencrypt/
-       - ./data/www:/var/www/
-       - ./data/cpustat:/var/www/html/cpu
-   php:
-     image: php:apache
-     restart: always
-     ports:
-       - 8080:80
-     volumes:
-       - ./apache/index:/var/www/html/
+       - ./nginx:/etc/nginx/
+     # - /etc/letsencrypt:/etc/letsencrypt/
+       - ./www:/usr/share/nginx/
+         #       - ./cpustat:/var/www/cpu/
+       

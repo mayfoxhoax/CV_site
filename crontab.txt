@@ -1,0 +1,4 @@
+# Will run every three months at 06:30 on the 1st of Jan,Apr,Jul and Oct.
+30 6 1 */3 * sudo certbot renew
+*/1 * * * * /home/ubuntu/CV_site/cpustat/cpustat.sh >> /home/ubuntu/CV_site/cpustat/cpustat.txt
+*/5 * * * * /home/ubuntu/CV_site/cpustat/cpustat.sh >  /home/ubuntu/CV_site/cpustat/cpustat.txt
